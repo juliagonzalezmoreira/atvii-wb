@@ -1,46 +1,62 @@
-# Getting Started with Create React App
+<h1 align="center">
+ ATVII-WB
+</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="center">
+	<b><i>
+Atividade ATVII-WB da aula de POO
+  </i></b>
+</p>
 
-## Available Scripts
+## 📍 Instruções 
 
-In the project directory, you can run:
+### Pré-Requisitos
+Para executar o projeto localmente, é necessário ter instalados em sua máquina os seguintes requisitos: [Node.js](https://nodejs.org/en). Após a instalação, é preciso também instalar as dependências do arquivo package.json. Para isso, digite o comando npm install após seguir os passos anteriores.
 
-### `npm start`
+❗️| Certifique-se de que todas as ferramentas necessárias estejam instaladas em sua máquina local e, em seguida, prossiga com os seguintes passos. <br>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Instruções para executar o projeto em sua máquina:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+**0. Baixe os arquivos**
 
-### `npm test`
+```bash
+# Clone o repositorio
+$ git clone https://github.com/juliagonzalezmoreira/atvii-wb
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**1. Instale as dependências**
 
-### `npm run build`
+```bash
+npm install
+```
+```bash
+npm install react react-dom
+```
+```bash
+npm install materialize-css@next
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**2. Rode o servidor**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+npm start   
+````
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🔧 Tecnologias
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
+![HTML](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 
-### `npm run eject`
+  
+## 🔗 Referências
+- [Documentação React](https://react.dev/)
+- [Documentação MaterializeCSS](https://materializecss.com/)
+- [Repositório com códigos auxiliares](https://github.com/gerson-pn/atvi-wb-typescript)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## ✅ Feedback
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Caso tenha algum feedback, entre em contato!
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+<a href = "mailto:juliagonzalezmoreira@gmail.com"><img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white"></a> 
+<a href="https://www.linkedin.com/in/julia-gonzalez-moreira/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a>
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+<p align="center"> Desenvolvido com 💜 por Julia Gonzalez Moreira </p>
