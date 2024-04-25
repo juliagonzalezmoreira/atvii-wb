@@ -50,7 +50,7 @@ npm start
 ## 🔗 Referências
 - [Documentação React](https://react.dev/)
 - [Documentação MaterializeCSS](https://materializecss.com/)
-- [Repositório com códigos auxiliares](https://github.com/gerson-pn/atvi-wb-typescript)
+- [Repositório com códigos auxiliares](https://github.com/gerson-pn/atvii-wb-typescript)
 
 ## ✅ Feedback
 
