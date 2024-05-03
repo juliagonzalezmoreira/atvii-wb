@@ -16,12 +16,9 @@ export default class ListaProdutos extends Component<props> {
             <nav className="nav-extended">
             <div className="nav-content">
             <ul className="tabs tabs-transparent purple lighten-3">
-                <li className="tab"><a className="active" href="#test2">Por Gênero</a></li>
-                <li className="tab disabled"><a href="#test3">Maior Consumo (Valor)</a></li>
-                <li className="tab"><a href="#test4">Maior Consumo Produtos</a></li>
-                <li className="tab"><a href="#test4">Maior Consumo Serviços</a></li>
-                <li className="tab"><a href="#test4">Maior Consumo Produtos</a></li>
-                <li className="tab"><a href="#test4">Maior Consumo Serviços</a></li>
+                <li className="tab"><a href="#!">Todos</a></li>
+                <li className="tab"><a href="#test3">Mais Consumidos</a></li>
+                <li className="tab"><a href="#test4">Mais Consumidos Por Gênero</a></li>
             </ul>
             </div>
             </nav>

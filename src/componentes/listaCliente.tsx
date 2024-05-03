@@ -12,7 +12,6 @@ type props = {
 export default class ListaCliente extends Component<props> {
     componentDidMount() {       
         M.Collapsible.init(document.querySelectorAll('.collapsible'), {});
-        M.Dropdown.init(document.querySelectorAll('.dropdown-trigger'))
 
     }
     render() {
@@ -23,8 +22,8 @@ export default class ListaCliente extends Component<props> {
         <nav className="nav-extended">
             <div className="nav-content">
             <ul className="tabs tabs-transparent purple lighten-3">
-                <li className="tab"><a className="active" href="#test2">Por Gênero</a></li>
-                <li className="tab disabled"><a href="#test3">Maior Consumo (Valor)</a></li>
+                <li className="tab"><a className="active" href="#todos">Por Gênero</a></li>
+                <li className="tab"><a href="#genero">Maior Consumo (Valor)</a></li>
                 <li className="tab"><a href="#test4">Maior Consumo Produtos</a></li>
                 <li className="tab"><a href="#test4">Maior Consumo Serviços</a></li>
                 <li className="tab"><a href="#test4">Maior Consumo Produtos</a></li>
@@ -36,6 +35,7 @@ export default class ListaCliente extends Component<props> {
             <div className="container center-align">
                 <h2 className="purple-text">Clientes</h2>
             </div>
+            <div id="todos">
             <ul className="collapsible">
                     <li className="collection-item avatar">
                         <div className="collapsible-header">
@@ -99,8 +99,9 @@ export default class ListaCliente extends Component<props> {
                         </div>
                     </li>
                 </ul>
-               
+                </div>
             </div>
+
         </>
         )
     }

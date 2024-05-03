@@ -16,6 +16,16 @@ export default class FormularioCadastroCliente extends Component<props> {
     render() {
         let estiloBotao = `btn waves-effect waves-light ${this.props.tema}`
         return (
+            <>
+            <nav className="nav-extended">
+            <div className="nav-content">
+            <ul className="tabs tabs-transparent purple lighten-3">
+                <li className="tab"><a className="active" href="#test2">Clientes</a></li>
+                <li className="tab"><a className="active" href="#test2">Produtos</a></li>
+                <li className="tab"><a href="#test3">Serviços</a></li>
+            </ul>
+            </div>
+        </nav>
             <div className="container">
             <div className="row">
                 <form className="col s12">
@@ -54,6 +64,7 @@ export default class FormularioCadastroCliente extends Component<props> {
                 </form>
             </div>
         </div>
+        </>
         )
     }
 }
