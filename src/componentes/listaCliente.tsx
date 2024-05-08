@@ -2,6 +2,7 @@
 import { Component, useEffect } from "react";
 import 'materialize-css/dist/css/materialize.min.css'
 import M from 'materialize-css';
+import { Link } from "react-router-dom";
 
 
 type props = {
@@ -19,20 +20,17 @@ export default class ListaCliente extends Component<props> {
 
         return (
         <>
-        <nav className="nav-extended">
-            <div className="nav-content">
-            <ul className="tabs tabs-transparent purple lighten-3">
-                <li className="tab"><a className="active" href="#todos">Por Gênero</a></li>
-                <li className="tab"><a href="#genero">Maior Consumo (Valor)</a></li>
-                <li className="tab"><a href="#test4">Maior Consumo Produtos</a></li>
-                <li className="tab"><a href="#test4">Maior Consumo Serviços</a></li>
-                <li className="tab"><a href="#test4">Maior Consumo Produtos</a></li>
-                <li className="tab"><a href="#test4">Maior Consumo Serviços</a></li>
-            </ul>
+            <div className="row">
+                    <a className="waves-effect purple lighten-3 btn">Por Gênero</a>
+                    <a className="waves-effect purple lighten-3 btn">Maior Consumo (Valor)</a>
+                    <a className="waves-effect purple lighten-3 btn">Maior Consumo Produtos</a>
+                    <a className="waves-effect purple lighten-3 btn">Maior Consumo Serviços</a>
+                    <a className="waves-effect purple lighten-3 btn">Menor Consumo Produtos</a>
+                    <a className="waves-effect purple lighten-3 btn">Menor Consumo Serviços</a>
             </div>
-        </nav>
-            <div className="container">
+
             <div className="container center-align">
+            <div className="container">
                 <h2 className="purple-text">Clientes</h2>
             </div>
             <div id="todos">

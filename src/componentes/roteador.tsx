@@ -4,6 +4,8 @@ import FormularioCadastroCliente from "./formularioCadastroCliente";
 import ListaCliente from "./listaCliente";
 import ListaProdutos from "./listaProdutos";
 import ListaServicos from "./listaServicos";
+import FormularioCadastroProduto from "./formularioCadastroProduto";
+import FormularioCadastroServico from "./formularioCadastroServico";
 
 type state = {
     tela: string
@@ -28,11 +30,20 @@ export default class Roteador extends Component<{}, state> {
 
     render() {
         let barraNavegacao = <BarraNavegacao seletorView={this.selecionarView} tema="purple lighten-2" botoes={['Cadastro', 'Clientes', 'Produtos', 'Serviços']} />
-        if (this.state.tela === 'Clientes') {
+        
+        if (this.state.tela === 'Cadastro') {
             return (
                 <>
                     {barraNavegacao}
-                    <ListaCliente tema="purple lighten-2" />
+                    <FormularioCadastroCliente tema="purple lighten-2" seletorView={this.selecionarView}  />
+                </>
+            )
+            
+        } if (this.state.tela === 'Clientes') {
+            return (
+                <>
+                    {barraNavegacao}
+                    <ListaCliente tema="purple lighten-2"  />
                 </>
             )
             
@@ -50,11 +61,25 @@ export default class Roteador extends Component<{}, state> {
                     <ListaServicos tema=" purple lighten-2" />
                 </>
             )
+        }  if (this.state.tela === 'FormularioProdutos') {
+            return (
+                <>
+                    {barraNavegacao}
+                    <FormularioCadastroProduto tema=" purple lighten-2" />
+                </>
+            )
+        }  if (this.state.tela === 'FormularioServicos') {
+            return (
+                <>
+                    {barraNavegacao}
+                    <FormularioCadastroServico tema=" purple lighten-2" />
+                </>
+            )
         } else {
             return (
                 <>
                     {barraNavegacao}
-                    <FormularioCadastroCliente tema="purple lighten-2" />
+                    <FormularioCadastroCliente tema=" purple lighten-2" seletorView={this.selecionarView}/>
                 </>
             )
         }

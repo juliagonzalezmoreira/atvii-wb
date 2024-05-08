@@ -1,15 +1,13 @@
 import { Component } from "react";
 import M from "materialize-css"; 
-import { Link } from "react-router-dom";
 
 
 type props = {
     tema: string
-    seletorView: Function
 
 }
 
-export default class FormularioCadastroCliente extends Component<props> {
+export default class FormularioCadastroProduto extends Component<props> {
 
     componentDidMount() {
         const elems = document.querySelectorAll('select');
@@ -23,9 +21,9 @@ export default class FormularioCadastroCliente extends Component<props> {
             <>
             <div className="row">
                 <div className="center-align">
-                <a className="waves-effect purple lighten-3 btn"><i className="material-icons left">account_circle</i>Cliente</a>
-                <a className="waves-effect purple lighten-3 btn"><i className="material-icons left">favorite</i>Produtos</a>
-                <a className="waves-effect purple lighten-3 btn"><i className="material-icons left">filter_vintage</i>Serviços</a>
+                    <a className="waves-effect purple lighten-3 btn"><i className="material-icons left">account_circle</i>Cliente</a>
+                    <a className="waves-effect purple lighten-3 btn"><i className="material-icons left">favorite</i>Produtos</a>
+                    <a className="waves-effect purple lighten-3 btn"><i className="material-icons left">filter_vintage</i>Serviços</a>
                 </div>  
             </div>
 
@@ -39,22 +37,11 @@ export default class FormularioCadastroCliente extends Component<props> {
                         </div>
                         <div className="input-field col s6">
                             <input id="social_name" type="text" className="validate" />
-                            <label htmlFor="social_name">Nome Social</label>
-                        </div>
-                    </div>
-                    <div className="row">
-                        <div className="input-field col s6">
-                            <select id="genero" name="genero" >
-                                <option value="" disabled selected>Escolha uma opção:</option>
-                                <option value="masculino">Masculino</option>
-                                <option value="feminino">Feminino</option>
-                                <option value="outros">Outros</option>
-                            </select>
-                            <label htmlFor="genero">Gênero</label>
+                            <label htmlFor="social_name">Valor</label>
                         </div>
                         <div className="input-field col s6">
-                            <input id="cpf" type="text" className="validate" />
-                            <label htmlFor="cpf">CPF</label>
+                            <input id="social_name" type="text" className="validate" />
+                            <label htmlFor="social_name">Quantidade</label>
                         </div>
                     </div>
                     <div className="row">

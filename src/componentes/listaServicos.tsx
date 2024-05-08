@@ -12,15 +12,13 @@ export default class ListaServicos extends Component<props> {
         let estilo = `collection-item active ${this.props.tema}`
         return (
             <>
-             <nav className="nav-extended">
-            <div className="nav-content">
-            <ul className="tabs tabs-transparent purple lighten-3">
-            <li className="tab"><a href="#todos">Todos</a></li>
-                <li className="tab"><a href="#test3">Mais Consumidos</a></li>
-                <li className="tab"><a href="#test4">Mais Consumidos Por Gênero</a></li>
-            </ul>
+
+            <div className="row">
+                <div className="center-align">
+                    <a className="waves-effect purple lighten-3 btn">Serviços Mais Consumidos</a>
+                    <a className="waves-effect purple lighten-3 btn">Serviços Mais Consumidos Por Gênero</a>
+                </div>
             </div>
-            </nav>
 
             <div className="container">
             <div className="container center-align">
