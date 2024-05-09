@@ -1,10 +1,10 @@
 <h1 align="center">
- ATVII-WB
+ATVII-WB & ATVIII-WB
 </h1>
 
 <p align="center">
 	<b><i>
-Atividade ATVII-WB da aula de POO
+Atividades ATVII-WB & ATVIII-WB da aula de POO
   </i></b>
 </p>
 
@@ -50,7 +50,8 @@ npm start
 ## 🔗 Referências
 - [Documentação React](https://react.dev/)
 - [Documentação MaterializeCSS](https://materializecss.com/)
-- [Repositório com códigos auxiliares](https://github.com/gerson-pn/atvii-wb-typescript)
+- [Repositório com códigos auxiliares - ATVII-WB](https://github.com/gerson-pn/atvii-wb-typescript)
+- [Repositório com códigos auxiliares - ATVIII-WB](https://github.com/gerson-pn/atviii-wb-typescript)
 
 ## ✅ Feedback
 
