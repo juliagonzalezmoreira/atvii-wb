@@ -21,13 +21,15 @@ export default class FormularioCadastroCliente extends Component<props> {
 
         return (
             <>
-            <div className="row">
-                <div className="center-align">
-                <a className="waves-effect purple lighten-3 btn"><i className="material-icons left">account_circle</i>Cliente</a>
-                <a className="waves-effect purple lighten-3 btn"><i className="material-icons left">favorite</i>Produtos</a>
-                <a className="waves-effect purple lighten-3 btn"><i className="material-icons left">filter_vintage</i>Serviços</a>
-                </div>  
-            </div>
+                <div className="row">
+                    <div className="col s12">
+                    <ul className="tabs">
+                        <li className="tab col s4"><a onClick={(e) => this.props.seletorView('FormularioCadastro', e)} className="purple-text text-lighten-2">Clientes</a></li>
+                        <li className="tab col s4"><a onClick={(e) => this.props.seletorView('FormularioProdutos', e)} className="purple-text text-lighten-2">Produtos</a></li>
+                        <li className="tab col s4"><a onClick={(e) => this.props.seletorView('FormularioServicos', e)} className="purple-text text-lighten-2">Serviços</a></li>
+                    </ul>
+                    </div>
+                </div>
 
             <div className="container center-align">
             <div className="row">

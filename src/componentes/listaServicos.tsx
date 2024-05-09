@@ -5,6 +5,8 @@ import 'materialize-css/dist/css/materialize.min.css'
 
 type props = {
     tema: string
+    seletorView: Function
+
 }
 
 export default class ListaServicos extends Component<props> {
@@ -13,12 +15,14 @@ export default class ListaServicos extends Component<props> {
         return (
             <>
 
-            <div className="row">
-                <div className="center-align">
-                    <a className="waves-effect purple lighten-3 btn">Serviços Mais Consumidos</a>
-                    <a className="waves-effect purple lighten-3 btn">Serviços Mais Consumidos Por Gênero</a>
+        <div className="row">
+                    <div className="col s12">
+                    <ul className="tabs">
+                        <li className="tab col s6"><a onClick={(e) => this.props.seletorView('', e)} className="purple-text text-lighten-2">Serviços Mais Consumidos</a></li>
+                        <li className="tab col s6"><a onClick={(e) => this.props.seletorView('', e)} className="purple-text text-lighten-2">Serviços Mais Consumidos Por Gênero</a></li>
+                    </ul>
+                    </div>
                 </div>
-            </div>
 
             <div className="container">
             <div className="container center-align">

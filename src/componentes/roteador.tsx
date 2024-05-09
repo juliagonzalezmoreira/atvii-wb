@@ -43,7 +43,7 @@ export default class Roteador extends Component<{}, state> {
             return (
                 <>
                     {barraNavegacao}
-                    <ListaCliente tema="purple lighten-2"  />
+                    <ListaCliente tema="purple lighten-2"  seletorView={this.selecionarView}/>
                 </>
             )
             
@@ -51,28 +51,28 @@ export default class Roteador extends Component<{}, state> {
             return (
                 <>
                     {barraNavegacao}
-                    <ListaProdutos tema="purple lighten-2" />
+                    <ListaProdutos tema="purple lighten-2" seletorView={this.selecionarView}/>
                 </>
             )
         }  if (this.state.tela === 'Serviços') {
             return (
                 <>
                     {barraNavegacao}
-                    <ListaServicos tema=" purple lighten-2" />
+                    <ListaServicos tema=" purple lighten-2" seletorView={this.selecionarView}/>
                 </>
             )
         }  if (this.state.tela === 'FormularioProdutos') {
             return (
                 <>
                     {barraNavegacao}
-                    <FormularioCadastroProduto tema=" purple lighten-2" />
+                    <FormularioCadastroProduto tema=" purple lighten-2"  seletorView={this.selecionarView} />
                 </>
             )
         }  if (this.state.tela === 'FormularioServicos') {
             return (
                 <>
                     {barraNavegacao}
-                    <FormularioCadastroServico tema=" purple lighten-2" />
+                    <FormularioCadastroServico tema=" purple lighten-2"  seletorView={this.selecionarView}/>
                 </>
             )
         } else {
