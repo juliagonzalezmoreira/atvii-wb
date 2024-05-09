@@ -11,7 +11,7 @@ type props = {
 }
 
 
-export default class ListaCliente extends Component<props> {
+export default class ListaMenorConsumoServ extends Component<props> {
     componentDidMount() {       
         M.Collapsible.init(document.querySelectorAll('.collapsible'), {});
 
@@ -36,9 +36,25 @@ export default class ListaCliente extends Component<props> {
             <div className="container center-align">
             <div className="container">
                 <h2 className="purple-text">Clientes</h2>
+                <h5 className="purple-text"> Menor Consumo Serviços</h5>
+
             </div>
-            <div id="todos">
             <ul className="collapsible">
+            <li className="collection-item avatar">
+                        <div className="collapsible-header">
+                        <i className="material-icons circle purple-text text-lighten-2">account_circle</i>
+                        <span className="title">Vitor Santana</span> </div>
+                        <div className="collapsible-body">
+                            <p>
+                            CPF: 456.789.123-00 <br/>
+                            Gênero: Masculino
+                            Produtos Consumidos em valor: R$362,89 <br/>
+                            Produtos Consumidos em quantidade: 10 <br/>
+                            Serviços Consumidos em valor: R$100,00 <br/>
+                            Serviços Consumidos em quantidade: 2 <br/>
+                        </p>
+                        </div>
+                    </li>
             <li className="collection-item avatar">
                         <div className="collapsible-header">
                         <i className="material-icons circle purple-text text-lighten-2">account_circle</i>
@@ -85,25 +101,9 @@ export default class ListaCliente extends Component<props> {
                         </p>
                         </div>
                     </li>
-                    <li className="collection-item avatar">
-                        <div className="collapsible-header">
-                        <i className="material-icons circle purple-text text-lighten-2">account_circle</i>
-                        <span className="title">Vitor Santana</span> </div>
-                        <div className="collapsible-body">
-                            <p>
-                            CPF: 456.789.123-00 <br/>
-                            Gênero: Masculino
-                            Produtos Consumidos em valor: R$362,89 <br/>
-                            Produtos Consumidos em quantidade: 10 <br/>
-                            Serviços Consumidos em valor: R$100,00 <br/>
-                            Serviços Consumidos em quantidade: 2 <br/>
-                        </p>
-                        </div>
-                    </li>
+                    
                 </ul>
                 </div>
-            </div>
-
         </>
         )
     }

@@ -6,6 +6,16 @@ import ListaProdutos from "./listaProdutos";
 import ListaServicos from "./listaServicos";
 import FormularioCadastroProduto from "./formularioCadastroProduto";
 import FormularioCadastroServico from "./formularioCadastroServico";
+import ListaGenero from "./listaGenero";
+import ListaMaiorConsumo from "./listaMaiorConsumo";
+import ListaMaiorConsumoProd from "./listaMaiorConsumoProd";
+import ListaMaiorConsumoServ from "./listaMaiorConsumoServ";
+import ListaMenorConsumoProd from "./listaMenorConsumoProd";
+import ListaMenorConsumoServ from "./listaMenorConsumoServ";
+import ListaProdMaisConsumidos from "./listaProdMaisConsumidos";
+import ListaProdMaisConsumidosGenero from "./listaProdMaisConsumidosGenero";
+import ListaServMaisConsumidos from "./listaServMaisConsumidos";
+import ListaServMaisConsumidosGenero from "./listaServMaisConsumidosGenero";
 
 type state = {
     tela: string
@@ -73,6 +83,76 @@ export default class Roteador extends Component<{}, state> {
                 <>
                     {barraNavegacao}
                     <FormularioCadastroServico tema=" purple lighten-2"  seletorView={this.selecionarView}/>
+                </>
+            )
+        } if (this.state.tela === 'PorGenero') {
+            return (
+                <>
+                    {barraNavegacao}
+                    <ListaGenero tema=" purple lighten-2"  seletorView={this.selecionarView}/>
+                </>
+            )
+        } if (this.state.tela === 'MaiorConsumo') {
+            return (
+                <>
+                    {barraNavegacao}
+                    <ListaMaiorConsumo tema=" purple lighten-2"  seletorView={this.selecionarView}/>
+                </>
+            )
+        } if (this.state.tela === 'MaiorConsumoProd') {
+            return (
+                <>
+                    {barraNavegacao}
+                    <ListaMaiorConsumoProd tema=" purple lighten-2"  seletorView={this.selecionarView}/>
+                </>
+            )
+        } if (this.state.tela === 'MaiorConsumoServ') {
+            return (
+                <>
+                    {barraNavegacao}
+                    <ListaMaiorConsumoServ tema=" purple lighten-2"  seletorView={this.selecionarView}/>
+                </>
+            )
+        } if (this.state.tela === 'MenorConsumoProd') {
+            return (
+                <>
+                    {barraNavegacao}
+                    <ListaMenorConsumoProd tema=" purple lighten-2"  seletorView={this.selecionarView}/>
+                </>
+            )
+        }if (this.state.tela === 'MenorConsumoServ') {
+            return (
+                <>
+                    {barraNavegacao}
+                    <ListaMenorConsumoServ tema=" purple lighten-2"  seletorView={this.selecionarView}/>
+                </>
+            )
+        } if (this.state.tela === 'ProdMaisConsumidos') {
+            return (
+                <>
+                    {barraNavegacao}
+                    <ListaProdMaisConsumidos tema=" purple lighten-2"  seletorView={this.selecionarView}/>
+                </>
+            )
+        } if (this.state.tela === 'ProdMaisConsumidosGenero') {
+            return (
+                <>
+                    {barraNavegacao}
+                    <ListaProdMaisConsumidosGenero tema=" purple lighten-2"  seletorView={this.selecionarView}/>
+                </>
+            )
+        } if (this.state.tela === 'ServMaisConsumidos') {
+            return (
+                <>
+                    {barraNavegacao}
+                    <ListaServMaisConsumidos tema=" purple lighten-2"  seletorView={this.selecionarView}/>
+                </>
+            )
+        } if (this.state.tela === 'ServMaisConsumidosGenero') {
+            return (
+                <>
+                    {barraNavegacao}
+                    <ListaServMaisConsumidosGenero tema=" purple lighten-2"  seletorView={this.selecionarView}/>
                 </>
             )
         } else {

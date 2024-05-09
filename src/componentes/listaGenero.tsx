@@ -11,7 +11,7 @@ type props = {
 }
 
 
-export default class ListaCliente extends Component<props> {
+export default class ListaGenero extends Component<props> {
     componentDidMount() {       
         M.Collapsible.init(document.querySelectorAll('.collapsible'), {});
 
@@ -39,6 +39,7 @@ export default class ListaCliente extends Component<props> {
             </div>
             <div id="todos">
             <ul className="collapsible">
+            <h5 className="purple-text">Feminino</h5>
             <li className="collection-item avatar">
                         <div className="collapsible-header">
                         <i className="material-icons circle purple-text text-lighten-2">account_circle</i>
@@ -70,6 +71,8 @@ export default class ListaCliente extends Component<props> {
                         </div>
                     </li>
                     
+                    <h5 className="purple-text">Masculino</h5>
+
                     <li className="collection-item avatar">
                         <div className="collapsible-header">
                         <i className="material-icons purple-text text-lighten-2">account_circle</i>
@@ -82,6 +85,7 @@ export default class ListaCliente extends Component<props> {
                             Produtos Consumidos em quantidade: 12 <br/>
                             Serviços Consumidos em valor: R$654,00 <br/>
                             Serviços Consumidos em quantidade: 22 <br/>
+
                         </p>
                         </div>
                     </li>

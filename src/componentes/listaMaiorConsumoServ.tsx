@@ -11,7 +11,7 @@ type props = {
 }
 
 
-export default class ListaCliente extends Component<props> {
+export default class ListaMaiorConsumoServ extends Component<props> {
     componentDidMount() {       
         M.Collapsible.init(document.querySelectorAll('.collapsible'), {});
 
@@ -36,25 +36,27 @@ export default class ListaCliente extends Component<props> {
             <div className="container center-align">
             <div className="container">
                 <h2 className="purple-text">Clientes</h2>
+                <h5 className="purple-text">Maior Consumo Serviços</h5>
+
             </div>
-            <div id="todos">
             <ul className="collapsible">
             <li className="collection-item avatar">
                         <div className="collapsible-header">
-                        <i className="material-icons circle purple-text text-lighten-2">account_circle</i>
-                        <span className="title">Ana Silva</span> </div>
+                        <i className="material-icons purple-text text-lighten-2">account_circle</i>
+                        <span className="title">Pedro Oliveira</span> </div>
                         <div className="collapsible-body">
                             <p>
-                            CPF: 321.654.987-00 <br/>
-                            Gênero: Feminino
-                            Produtos Consumidos em valor: R$500,00 <br/>
-                            Produtos Consumidos em quantidade: 5 <br/>
-                            Serviços Consumidos em valor: R$259,90 <br/>
-                            Serviços Consumidos em quantidade: 3 <br/>
+                            CPF: 789.123.456-00 <br/>
+                            Gênero: Masculino <br/>
+                            Produtos Consumidos em valor: R$286,00 <br/>
+                            Produtos Consumidos em quantidade: 12 <br/>
+                            Serviços Consumidos em valor: R$654,00 <br/>
+                            Serviços Consumidos em quantidade: 22 <br/>
                         </p>
                         </div>
                     </li>
-                    <li className="collection-item avatar">
+
+                <li className="collection-item avatar">
                         <div className="collapsible-header">
                         <i className="material-icons circle purple-text text-lighten-2">account_circle</i>
                         <span className="title">Julia Gonzalez</span> </div>
@@ -72,19 +74,20 @@ export default class ListaCliente extends Component<props> {
                     
                     <li className="collection-item avatar">
                         <div className="collapsible-header">
-                        <i className="material-icons purple-text text-lighten-2">account_circle</i>
-                        <span className="title">Pedro Oliveira</span> </div>
+                        <i className="material-icons circle purple-text text-lighten-2">account_circle</i>
+                        <span className="title">Ana Silva</span> </div>
                         <div className="collapsible-body">
                             <p>
-                            CPF: 789.123.456-00 <br/>
-                            Gênero: Masculino <br/>
-                            Produtos Consumidos em valor: R$286,00 <br/>
-                            Produtos Consumidos em quantidade: 12 <br/>
-                            Serviços Consumidos em valor: R$654,00 <br/>
-                            Serviços Consumidos em quantidade: 22 <br/>
+                            CPF: 321.654.987-00 <br/>
+                            Gênero: Feminino
+                            Produtos Consumidos em valor: R$500,00 <br/>
+                            Produtos Consumidos em quantidade: 5 <br/>
+                            Serviços Consumidos em valor: R$259,90 <br/>
+                            Serviços Consumidos em quantidade: 3 <br/>
                         </p>
                         </div>
                     </li>
+                    
                     <li className="collection-item avatar">
                         <div className="collapsible-header">
                         <i className="material-icons circle purple-text text-lighten-2">account_circle</i>
@@ -100,10 +103,9 @@ export default class ListaCliente extends Component<props> {
                         </p>
                         </div>
                     </li>
+
                 </ul>
                 </div>
-            </div>
-
         </>
         )
     }

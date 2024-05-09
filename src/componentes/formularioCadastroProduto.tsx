@@ -32,6 +32,8 @@ export default class FormularioCadastroProduto extends Component<props> {
                 </div>
 
             <div className="container center-align">
+            <h5 className="purple-text">Cadastro Produto</h5>
+
             <div className="row">
                 <form className="col s12">
                     <div className="row">

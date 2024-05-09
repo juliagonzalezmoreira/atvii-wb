@@ -9,7 +9,7 @@ type props = {
 
 }
 
-export default class ListaProdutos extends Component<props> {
+export default class ListaProdMaisConsumidos extends Component<props> {
     render() {
         let estilo = `collection-item active ${this.props.tema}`
 
@@ -26,24 +26,18 @@ export default class ListaProdutos extends Component<props> {
         <div className="container">
             <div className="container center-align">
                 <h2 className="purple-text">Produtos</h2>
+                <h5 className="purple-text">Produtos Mais Consumidos</h5>
 
             </div>
             <ul className="collection">
-                
-                    <li className="collection-item avatar">
-                        <i className="material-icons tiny circle purple lighten-2">favorite</i>
-                        <span className="title">Paleta de Sombra</span> 
-                            <p> 
-                             R$60,00
-                            </p>
-                    </li>
-                    <li className="collection-item avatar">
+            <li className="collection-item avatar">
                         <i className="material-icons tiny circle purple lighten-2">favorite</i>
                         <span className="title">Gloss Labial</span> 
                             <p> 
                              R$25,00
                             </p>
                     </li>
+
                     <li className="collection-item avatar">
                         <i className="material-icons tiny circle purple lighten-2">favorite</i>
                         <span className="title">Espuma de Barbear</span> 
@@ -51,6 +45,14 @@ export default class ListaProdutos extends Component<props> {
                              R$30,00
                             </p>
                     </li>
+                    <li className="collection-item avatar">
+                        <i className="material-icons tiny circle purple lighten-2">favorite</i>
+                        <span className="title">Paleta de Sombra</span> 
+                            <p> 
+                             R$60,00
+                            </p>
+                    </li>
+                    
                     <li className="collection-item avatar">
                         <i className="material-icons tiny circle purple lighten-2">favorite</i>
                         <span className="title">Secador de Cabelo</span> 
