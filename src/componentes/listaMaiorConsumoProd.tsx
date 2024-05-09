@@ -2,34 +2,28 @@
 import { Component, useEffect } from "react";
 import 'materialize-css/dist/css/materialize.min.css'
 import M from 'materialize-css';
-import { Link } from "react-router-dom";
 
+export default function ListaMaiorConsumoProd(props) {
 
-type props = {
-    tema: string
-    seletorView: Function
-}
-
-
-export default class ListaMaiorConsumoProd extends Component<props> {
-    componentDidMount() {       
+    useEffect(() => {
         M.Collapsible.init(document.querySelectorAll('.collapsible'), {});
+        return () => {
+        };
+    }, []);
 
-    }
-    render() {
-        let estilo = `collection-item active ${this.props.tema}`
+        let estilo = `collection-item active ${props.tema}`
 
         return (
         <>
             <div className="row">
                     <div className="col s12">
                     <ul className="tabs">
-                        <li className="tab col s2"><a onClick={(e) => this.props.seletorView('PorGenero', e)} className="purple-text text-lighten-2">Gênero</a></li>
-                        <li className="tab col s2"><a onClick={(e) => this.props.seletorView('MaiorConsumo', e)} className="purple-text text-lighten-2">Maior Consumo (Valor)</a></li>
-                        <li className="tab col s2"><a onClick={(e) => this.props.seletorView('MaiorConsumoProd', e)} className="purple-text text-lighten-2">Maior Consumo Produtos</a></li>
-                        <li className="tab col s2"><a onClick={(e) => this.props.seletorView('MaiorConsumoServ', e)} className="purple-text text-lighten-2">Maior Consumo Serviços</a></li>
-                        <li className="tab col s2"><a onClick={(e) => this.props.seletorView('MenorConsumoProd', e)} className="purple-text text-lighten-2">Menor Consumo Produtos</a></li>
-                        <li className="tab col s2"><a onClick={(e) => this.props.seletorView('MenorConsumoServ', e)} className="purple-text text-lighten-2">Menor Consumo Serviços</a></li>
+                        <li className="tab col s2"><a onClick={(e) => props.seletorView('PorGenero', e)} className="purple-text text-lighten-2">Gênero</a></li>
+                        <li className="tab col s2"><a onClick={(e) => props.seletorView('MaiorConsumo', e)} className="purple-text text-lighten-2">Maior Consumo (Valor)</a></li>
+                        <li className="tab col s2"><a onClick={(e) => props.seletorView('MaiorConsumoProd', e)} className="purple-text text-lighten-2">Maior Consumo Produtos</a></li>
+                        <li className="tab col s2"><a onClick={(e) => props.seletorView('MaiorConsumoServ', e)} className="purple-text text-lighten-2">Maior Consumo Serviços</a></li>
+                        <li className="tab col s2"><a onClick={(e) => props.seletorView('MenorConsumoProd', e)} className="purple-text text-lighten-2">Menor Consumo Produtos</a></li>
+                        <li className="tab col s2"><a onClick={(e) => props.seletorView('MenorConsumoServ', e)} className="purple-text text-lighten-2">Menor Consumo Serviços</a></li>
                     </ul>
                     </div>
                 </div>
@@ -109,5 +103,5 @@ export default class ListaMaiorConsumoProd extends Component<props> {
 
         </>
         )
-    }
+    
 }

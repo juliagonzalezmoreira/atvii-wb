@@ -1,4 +1,4 @@
-import { Component } from "react";
+import { Component, useState } from "react";
 import BarraNavegacao from "./barraNavegacao";
 import FormularioCadastroCliente from "./formularioCadastroCliente";
 import ListaCliente from "./listaCliente";
@@ -17,152 +17,152 @@ import ListaProdMaisConsumidosGenero from "./listaProdMaisConsumidosGenero";
 import ListaServMaisConsumidos from "./listaServMaisConsumidos";
 import ListaServMaisConsumidosGenero from "./listaServMaisConsumidosGenero";
 
-type state = {
-    tela: string
-}
 
-export default class Roteador extends Component<{}, state> {
-    constructor(props: {} | Readonly<{}>) {
-        super(props)
-        this.state = {
-            tela: 'Cadastro'
-        }
-        this.selecionarView = this.selecionarView.bind(this)
-    }
+export default function Roteador() {
 
-    selecionarView(novaTela: string, evento: Event) {
-        evento.preventDefault()
+    const [tela, setTela] = useState('Cadastro')
+
+    const selecionarView = (novaTela: string, evento: React.MouseEvent) => {
+        evento.preventDefault();
         console.log(novaTela);
-        this.setState({
-            tela: novaTela
-        })
-    }
+        setTela(novaTela);
+      };
+    
+      let barraNavegacao = (
+        <BarraNavegacao
+          seletorView={selecionarView}
+          tema="purple lighten-2"
+          botoes={['Cadastro', 'Clientes', 'Produtos', 'Serviços']}
+        />
+      );
 
-    render() {
-        let barraNavegacao = <BarraNavegacao seletorView={this.selecionarView} tema="purple lighten-2" botoes={['Cadastro', 'Clientes', 'Produtos', 'Serviços']} />
+    const construirView = () => {
         
-        if (this.state.tela === 'Cadastro') {
+        if (tela === 'Cadastro') {
             return (
                 <>
-                    {barraNavegacao}
-                    <FormularioCadastroCliente tema="purple lighten-2" seletorView={this.selecionarView}  />
+                     {barraNavegacao}
+                    <FormularioCadastroCliente tema="purple lighten-2" seletorView={selecionarView}/>
                 </>
             )
             
-        } if (this.state.tela === 'Clientes') {
+        } if (tela === 'Clientes') {
+            return (
+                <>
+                     {barraNavegacao}
+                    <ListaCliente tema="purple lighten-2" seletorView={selecionarView}/>
+                </>
+            )
+        } if (tela === 'Produtos') {
             return (
                 <>
                     {barraNavegacao}
-                    <ListaCliente tema="purple lighten-2"  seletorView={this.selecionarView}/>
+                    <ListaProdutos tema="purple lighten-2" seletorView={selecionarView}/>
                 </>
             )
-            
-        } if (this.state.tela === 'Produtos') {
+        }  if (tela === 'Serviços') {
             return (
                 <>
                     {barraNavegacao}
-                    <ListaProdutos tema="purple lighten-2" seletorView={this.selecionarView}/>
+                    <ListaServicos tema=" purple lighten-2" seletorView={selecionarView}/>
                 </>
             )
-        }  if (this.state.tela === 'Serviços') {
+        }  if (tela === 'FormularioProdutos') {
             return (
                 <>
                     {barraNavegacao}
-                    <ListaServicos tema=" purple lighten-2" seletorView={this.selecionarView}/>
+                    <FormularioCadastroProduto tema=" purple lighten-2"  seletorView={selecionarView} />
                 </>
             )
-        }  if (this.state.tela === 'FormularioProdutos') {
+        }  if (tela === 'FormularioServicos') {
             return (
                 <>
                     {barraNavegacao}
-                    <FormularioCadastroProduto tema=" purple lighten-2"  seletorView={this.selecionarView} />
+                    <FormularioCadastroServico tema=" purple lighten-2"  seletorView={selecionarView}/>
                 </>
             )
-        }  if (this.state.tela === 'FormularioServicos') {
+        } if (tela === 'PorGenero') {
             return (
                 <>
                     {barraNavegacao}
-                    <FormularioCadastroServico tema=" purple lighten-2"  seletorView={this.selecionarView}/>
+                    <ListaGenero tema=" purple lighten-2"  seletorView={selecionarView}/>
                 </>
             )
-        } if (this.state.tela === 'PorGenero') {
+        } if (tela === 'MaiorConsumo') {
             return (
                 <>
                     {barraNavegacao}
-                    <ListaGenero tema=" purple lighten-2"  seletorView={this.selecionarView}/>
+                    <ListaMaiorConsumo tema=" purple lighten-2" seletorView={selecionarView}/>
                 </>
             )
-        } if (this.state.tela === 'MaiorConsumo') {
+        } if (tela === 'MaiorConsumoProd') {
             return (
                 <>
                     {barraNavegacao}
-                    <ListaMaiorConsumo tema=" purple lighten-2"  seletorView={this.selecionarView}/>
+                    <ListaMaiorConsumoProd tema=" purple lighten-2"  seletorView={selecionarView}/>
                 </>
             )
-        } if (this.state.tela === 'MaiorConsumoProd') {
+        } if (tela === 'MaiorConsumoServ') {
             return (
                 <>
                     {barraNavegacao}
-                    <ListaMaiorConsumoProd tema=" purple lighten-2"  seletorView={this.selecionarView}/>
+                    <ListaMaiorConsumoServ tema=" purple lighten-2"  seletorView={selecionarView}/>
                 </>
             )
-        } if (this.state.tela === 'MaiorConsumoServ') {
+        } if (tela === 'MenorConsumoProd') {
             return (
                 <>
                     {barraNavegacao}
-                    <ListaMaiorConsumoServ tema=" purple lighten-2"  seletorView={this.selecionarView}/>
+                    <ListaMenorConsumoProd tema=" purple lighten-2"  seletorView={selecionarView}/>
                 </>
             )
-        } if (this.state.tela === 'MenorConsumoProd') {
+        }if (tela === 'MenorConsumoServ') {
             return (
                 <>
                     {barraNavegacao}
-                    <ListaMenorConsumoProd tema=" purple lighten-2"  seletorView={this.selecionarView}/>
+                    <ListaMenorConsumoServ tema=" purple lighten-2"  seletorView={selecionarView}/>
                 </>
             )
-        }if (this.state.tela === 'MenorConsumoServ') {
+        } if (tela === 'ProdMaisConsumidos') {
             return (
                 <>
                     {barraNavegacao}
-                    <ListaMenorConsumoServ tema=" purple lighten-2"  seletorView={this.selecionarView}/>
+                    <ListaProdMaisConsumidos tema=" purple lighten-2"  seletorView={selecionarView}/>
                 </>
             )
-        } if (this.state.tela === 'ProdMaisConsumidos') {
+        } if (tela === 'ProdMaisConsumidosGenero') {
             return (
                 <>
                     {barraNavegacao}
-                    <ListaProdMaisConsumidos tema=" purple lighten-2"  seletorView={this.selecionarView}/>
+                    <ListaProdMaisConsumidosGenero tema=" purple lighten-2"  seletorView={selecionarView}/>
                 </>
             )
-        } if (this.state.tela === 'ProdMaisConsumidosGenero') {
+        } if (tela === 'ServMaisConsumidos') {
             return (
                 <>
                     {barraNavegacao}
-                    <ListaProdMaisConsumidosGenero tema=" purple lighten-2"  seletorView={this.selecionarView}/>
+                    <ListaServMaisConsumidos tema=" purple lighten-2"  seletorView={selecionarView}/>
                 </>
             )
-        } if (this.state.tela === 'ServMaisConsumidos') {
+        } if (tela === 'ServMaisConsumidosGenero') {
             return (
                 <>
                     {barraNavegacao}
-                    <ListaServMaisConsumidos tema=" purple lighten-2"  seletorView={this.selecionarView}/>
+                    <ListaServMaisConsumidosGenero tema=" purple lighten-2"  seletorView={selecionarView}/>
                 </>
-            )
-        } if (this.state.tela === 'ServMaisConsumidosGenero') {
-            return (
-                <>
-                    {barraNavegacao}
-                    <ListaServMaisConsumidosGenero tema=" purple lighten-2"  seletorView={this.selecionarView}/>
-                </>
-            )
+            )  
         } else {
             return (
                 <>
-                    {barraNavegacao}
-                    <FormularioCadastroCliente tema=" purple lighten-2" seletorView={this.selecionarView}/>
+                     {barraNavegacao}
+                    <FormularioCadastroCliente tema=" purple lighten-2" seletorView={selecionarView}/>
                 </>
             )
         }
-
     }
+    return (
+        construirView()
+    )
 }
+
+ /*  */

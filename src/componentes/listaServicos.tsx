@@ -3,23 +3,18 @@ import { Component } from "react";
 import 'materialize-css/dist/css/materialize.min.css'
 
 
-type props = {
-    tema: string
-    seletorView: Function
+export default function ListaServicos(props) {
 
-}
+        let estilo = `collection-item active ${props.tema}`
 
-export default class ListaServicos extends Component<props> {
-    render() {
-        let estilo = `collection-item active ${this.props.tema}`
         return (
             <>
 
         <div className="row">
                     <div className="col s12">
                     <ul className="tabs">
-                        <li className="tab col s6"><a onClick={(e) => this.props.seletorView('ServMaisConsumidos', e)} className="purple-text text-lighten-2">Serviços Mais Consumidos</a></li>
-                        <li className="tab col s6"><a onClick={(e) => this.props.seletorView('ServMaisCondumidosGenero', e)} className="purple-text text-lighten-2">Serviços Mais Consumidos Por Gênero</a></li>
+                        <li className="tab col s6"><a onClick={(e) => props.seletorView('ServMaisConsumidos', e)} className="purple-text text-lighten-2">Serviços Mais Consumidos</a></li>
+                        <li className="tab col s6"><a onClick={(e) => props.seletorView('ServMaisCondumidosGenero', e)} className="purple-text text-lighten-2">Serviços Mais Consumidos Por Gênero</a></li>
                     </ul>
                     </div>
                 </div>
@@ -63,5 +58,4 @@ export default class ListaServicos extends Component<props> {
             </div>
             </>
         )
-    }
 }
