@@ -14,7 +14,7 @@ export default function ListaServicos(props) {
                     <div className="col s12">
                     <ul className="tabs">
                         <li className="tab col s6"><a onClick={(e) => props.seletorView('ServMaisConsumidos', e)} className="purple-text text-lighten-2">Serviços Mais Consumidos</a></li>
-                        <li className="tab col s6"><a onClick={(e) => props.seletorView('ServMaisCondumidosGenero', e)} className="purple-text text-lighten-2">Serviços Mais Consumidos Por Gênero</a></li>
+                        <li className="tab col s6"><a onClick={(e) => props.seletorView('ServMaisConsumidosGenero', e)} className="purple-text text-lighten-2">Serviços Mais Consumidos Por Gênero</a></li>
                     </ul>
                     </div>
                 </div>
