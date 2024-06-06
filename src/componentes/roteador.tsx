@@ -16,6 +16,8 @@ import ListaProdMaisConsumidos from "./listaProdMaisConsumidos";
 import ListaProdMaisConsumidosGenero from "./listaProdMaisConsumidosGenero";
 import ListaServMaisConsumidos from "./listaServMaisConsumidos";
 import ListaServMaisConsumidosGenero from "./listaServMaisConsumidosGenero";
+import AtualizarCliente from "./atualizarCliente";
+import ExcluirCliente from "./excluirCliente";
 
 type state = {
     tela: string
@@ -155,6 +157,20 @@ export default class Roteador extends Component<{}, state> {
                     <ListaServMaisConsumidosGenero tema=" purple lighten-2"  seletorView={this.selecionarView}/>
                 </>
             )
+        } if (this.state.tela === 'AtualizarCliente') {
+            return (
+               <>
+                    {barraNavegacao}
+                    <AtualizarCliente tema=" purple lighten-2"  seletorView={this.selecionarView}/>
+                </>
+            )  
+        }if (this.state.tela === 'ExcluirCliente') {
+            return (
+               <>
+                    {barraNavegacao}
+                    <ExcluirCliente tema=" purple lighten-2"  seletorView={this.selecionarView}/>
+                </>
+            )  
         } else {
             return (
                 <>
