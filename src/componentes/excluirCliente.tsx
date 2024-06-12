@@ -83,7 +83,7 @@ export default class ExcluirCliente extends Component<Props, State> {
                             </div>
                             <div className="row">
                                 <div className="col s12">
-                                    <button className="btn waves-effect purple ligthen-3" type="submit" name="action">Enviar
+                                    <button className="btn waves-effect purple ligthen-2" type="submit" name="action">Enviar
                                         <i className="material-icons right">send</i>
                                     </button>
                                 </div>

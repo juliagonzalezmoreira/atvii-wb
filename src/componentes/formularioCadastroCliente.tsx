@@ -82,9 +82,6 @@ export default class FormularioCadastroCliente extends Component<Props, State> {
     render() {
         let estiloBotao = `btn waves-effect waves-light ${this.props.tema}`;
 
-        function seletorView(arg0: string, e: React.MouseEvent<HTMLAnchorElement, MouseEvent>): void {
-            throw new Error("Function not implemented.");
-        }
 
         return (
             <>
