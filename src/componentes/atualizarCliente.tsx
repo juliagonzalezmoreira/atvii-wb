@@ -93,12 +93,6 @@ export default class FormularioAtualizacaoCliente extends Component<Props, State
                             </div>
                             <div className="row">
                                 <div className="input-field col s12">
-                                    <input onChange={this.capturarDados} value={this.state.nome} id="nome" type="text" className="validate" />
-                                    <label htmlFor="nome" className={this.state.nome ? "active" : ""}>Nome Atual</label>
-                                </div>
-                            </div>
-                            <div className="row">
-                                <div className="input-field col s12">
                                     <input onChange={this.capturarDados} value={this.state.novoNome} id="novoNome" type="text" className="validate" />
                                     <label htmlFor="novoNome" className={this.state.novoNome ? "active" : ""}>Novo Nome</label>
                                 </div>
