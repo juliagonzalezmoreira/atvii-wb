@@ -1,5 +1,5 @@
-import { Component, useEffect, useState } from "react";
-import 'materialize-css/dist/css/materialize.min.css'
+import React, { Component } from "react";
+import 'materialize-css/dist/css/materialize.min.css';
 import M from 'materialize-css';
 
 type Cliente = {
@@ -7,29 +7,32 @@ type Cliente = {
     nome: string;
     sobreNome: string;
     email: string;
-    
 }
 
-type props = {
-    tema: string
-    seletorView: Function
-}
+type Props = {
+    tema: string;
+    seletorView: Function;
+};
 
-export default function ListaCliente(props: props) {
-    const [clientes, setClientes] = useState<Cliente[]>([]);
+export default class ListaCliente extends Component<Props, { clientes: Cliente[] }> {
 
-    useEffect(() => {
+    constructor(props: Props) {
+        super(props);
+        this.state = {
+            clientes: []
+        };
+    }
+
+    componentDidMount() {
         M.Collapsible.init(document.querySelectorAll('.collapsible'), {});
         fetch('http://localhost:32832/clientes')
             .then(response => response.json())
-            .then(data => setClientes(data))
+            .then(data => this.setState({ clientes: data }))
             .catch(error => console.error('Erro ao obter clientes:', error));
-    }, []);
+    }
 
-    let estilo = `collection-item active ${props.tema}`;
-
-    return (
-        <>
+    render() {
+        return (
             <div className="container center-align">
                 <div className="container">
                     <h2 className="purple-text">Clientes</h2>
@@ -44,18 +47,17 @@ export default function ListaCliente(props: props) {
                         </tr>
                     </thead>
                     <tbody>
-                        {clientes.map((cliente, index) => (
+                        {this.state.clientes.map((cliente, index) => (
                             <tr key={index}>
                                 <td>{cliente.id}</td>
                                 <td>{cliente.nome}</td>
                                 <td>{cliente.sobreNome}</td>
                                 <td>{cliente.email}</td>
-                        
                             </tr>
                         ))}
                     </tbody>
                 </table>
             </div>
-        </>
-    )
+        );
+    }
 }
