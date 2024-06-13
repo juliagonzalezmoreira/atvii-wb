@@ -7,6 +7,21 @@ type Cliente = {
     nome: string;
     sobreNome: string;
     email: string;
+    endereco: {
+        id: string;
+        estado: string;
+        cidade: string;
+        bairro: string;
+        rua: string;
+        numero: string;
+        codigoPostal: string;
+        informacoesAdicionais: string;
+    };
+    telefones: {
+        id: string;
+        ddd: string;
+        numero: string;
+    }[];
 }
 
 type Props = {
@@ -62,15 +77,31 @@ export default class ListaCliente extends Component<Props, { clientes: Cliente[]
                         value={this.state.id}
                         onChange={this.handleInputChange}
                     />
-                    <button className="btn waves-effect purple ligthen-2" onClick={this.fetchClienteById}>Buscar Cliente</button>
+                    <button className="btn waves-effect purple lighten-2" onClick={this.fetchClienteById}>Buscar Cliente</button>
                 </div>
                 {this.state.clienteSelecionado && (
                     <div>
                         <h3 className="purple-text">Cliente Selecionado</h3>
                         <p>ID: {this.state.clienteSelecionado.id}</p>
                         <p>Nome: {this.state.clienteSelecionado.nome}</p>
-                        <p>Sobrenome: {this.state.clienteSelecionado.sobreNome}</p>
+                        <p>Nome Social: {this.state.clienteSelecionado.sobreNome}</p>
                         <p>Email: {this.state.clienteSelecionado.email}</p>
+                        <p className="purple-text">Endereço</p>
+                        <ul>
+                            <li>Estado: {this.state.clienteSelecionado.endereco.estado}</li>
+                            <li>Cidade: {this.state.clienteSelecionado.endereco.cidade}</li>
+                            <li>Bairro: {this.state.clienteSelecionado.endereco.bairro}</li>
+                            <li>Rua: {this.state.clienteSelecionado.endereco.rua}</li>
+                            <li>Número: {this.state.clienteSelecionado.endereco.numero}</li>
+                            <li>Código Postal: {this.state.clienteSelecionado.endereco.codigoPostal}</li>
+                            <li>Informações Adicionais: {this.state.clienteSelecionado.endereco.informacoesAdicionais}</li>
+                        </ul>
+                        <p className="purple-text">Telefones</p>
+                        <ul>
+                            {this.state.clienteSelecionado.telefones.map((telefone, index) => (
+                                <li key={index}>{telefone.ddd} - {telefone.numero}</li>
+                            ))}
+                        </ul>
                     </div>
                 )}
                 <table className="responsive-table">
@@ -78,8 +109,7 @@ export default class ListaCliente extends Component<Props, { clientes: Cliente[]
                         <tr>
                             <th>ID</th>
                             <th>Nome</th>
-                            <th>Sobrenome</th>
-                            <th>Email</th>
+                            <th>Nome Social</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -88,7 +118,6 @@ export default class ListaCliente extends Component<Props, { clientes: Cliente[]
                                 <td>{cliente.id}</td>
                                 <td>{cliente.nome}</td>
                                 <td>{cliente.sobreNome}</td>
-                                <td>{cliente.email}</td>
                             </tr>
                         ))}
                     </tbody>
