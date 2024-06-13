@@ -60,6 +60,8 @@ export default class FormularioCadastroCliente extends Component<Props, State> {
         this.capturarEmail = this.capturarEmail.bind(this);
         this.capturarEndereco = this.capturarEndereco.bind(this);
         this.capturarTelefone = this.capturarTelefone.bind(this);
+        this.adicionarTelefone = this.adicionarTelefone.bind(this);
+        this.removerTelefone = this.removerTelefone.bind(this);
         this.submeterFormulario = this.submeterFormulario.bind(this);
     }
 
@@ -90,6 +92,18 @@ export default class FormularioCadastroCliente extends Component<Props, State> {
         const newTelefones = [...telefones];
         newTelefones[index][event.target.id.split("-")[0]] = event.target.value;
         this.setState({ telefones: newTelefones });
+    }
+
+    adicionarTelefone() {
+        this.setState(prevState => ({
+            telefones: [...prevState.telefones, { id: '', ddd: '', numero: '' }]
+        }));
+    }
+
+    removerTelefone(index: number) {
+        this.setState(prevState => ({
+            telefones: prevState.telefones.filter((telefone, i) => i !== index)
+        }));
     }
 
     async submeterFormulario(event: FormEvent<HTMLFormElement>) {
@@ -197,15 +211,23 @@ export default class FormularioCadastroCliente extends Component<Props, State> {
                                     <label htmlFor="informacoesAdicionais" className={this.state.endereco.informacoesAdicionais ? "active" : ""}>Informações Adicionais</label>
                                 </div>
                                 {this.state.telefones.map((telefone, index) => (
-                                    <><div key={index} className="input-field col s6">
-                                        <input onChange={(e) => this.capturarTelefone(e, index)} value={telefone.ddd} id={`ddd-${index}`} type="text" className="validate" />
-                                        <label htmlFor={`ddd-${index}`} className={telefone.ddd ? "active" : ""}>DDD</label>
-                                    </div>
-                                    <div key={index} className="input-field col s6">
+                                    <div key={index} className="row">
+                                        <div className="input-field col s4">
+                                            <input onChange={(e) => this.capturarTelefone(e, index)} value={telefone.ddd} id={`ddd-${index}`} type="text" className="validate" />
+                                            <label htmlFor={`ddd-${index}`} className={telefone.ddd ? "active" : ""}>DDD</label>
+                                        </div>
+                                        <div className="input-field col s4">
                                             <input onChange={(e) => this.capturarTelefone(e, index)} value={telefone.numero} id={`numero-${index}`} type="text" className="validate" />
                                             <label htmlFor={`numero-${index}`} className={telefone.numero ? "active" : ""}>Número</label>
-                                        </div></>
+                                        </div>
+                                        <div className="col s4">
+                                            <button className="btn waves-effect waves-light red lighten-2" type="button" onClick={() => this.removerTelefone(index)}>Remover</button>
+                                        </div>
+                                    </div>
                                 ))}
+                                <div className="input-field col s12">
+                                    <button className="btn waves-effect waves-light green lighten-2" type="button" onClick={this.adicionarTelefone}>Adicionar Telefone</button>
+                                </div>
                             </div>
 
                             <div className="row">

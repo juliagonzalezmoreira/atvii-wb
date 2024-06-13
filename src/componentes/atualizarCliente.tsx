@@ -23,6 +23,7 @@ type State = {
         ddd: string;
         numero: string;
     }[];
+    telefoneSelecionado: number | null;
 };
 
 export default class AtualizarCliente extends Component<Props, State> {
@@ -44,7 +45,8 @@ export default class AtualizarCliente extends Component<Props, State> {
                 id: '',
                 ddd: '',
                 numero: ''
-            }]
+            }],
+            telefoneSelecionado: null,
         };
 
         this.capturarCampo = this.capturarCampo.bind(this);
@@ -52,6 +54,8 @@ export default class AtualizarCliente extends Component<Props, State> {
         this.capturarId = this.capturarId.bind(this);
         this.capturarEndereco = this.capturarEndereco.bind(this);
         this.capturarTelefone = this.capturarTelefone.bind(this);
+        this.adicionarTelefone = this.adicionarTelefone.bind(this);
+        this.removerTelefone = this.removerTelefone.bind(this);
     }
 
     capturarCampo(event: ChangeEvent<HTMLInputElement>) {
@@ -83,6 +87,18 @@ export default class AtualizarCliente extends Component<Props, State> {
         const newTelefones = [...telefones];
         newTelefones[index][event.target.id.split("-")[0]] = event.target.value;
         this.setState({ telefones: newTelefones });
+    }
+
+    adicionarTelefone() {
+        this.setState(prevState => ({
+            telefones: [...prevState.telefones, { id: '', ddd: '', numero: '' }]
+        }));
+    }
+
+    removerTelefone(index: number) {
+        this.setState(prevState => ({
+            telefones: prevState.telefones.filter((telefone, i) => i !== index)
+        }));
     }
 
     async submeterFormulario(event: FormEvent<HTMLFormElement>) {
@@ -172,18 +188,24 @@ export default class AtualizarCliente extends Component<Props, State> {
                                     <><div key={index} className="input-field col s12">
                                         <input onChange={(e) => this.capturarTelefone(e, index)} value={telefone.ddd} id={`ddd-${index}`} type="text" className="validate" />
                                         <label htmlFor={`ddd-${index}`} className={telefone.ddd ? "active" : ""}>DDD</label>
-                                    </div><div key={index} className="input-field col s12">
+                                    </div>
+                                    <div key={index} className="input-field col s12">
                                             <input onChange={(e) => this.capturarTelefone(e, index)} value={telefone.numero} id={`numero-${index}`} type="text" className="validate" />
                                             <label htmlFor={`numero-${index}`} className={telefone.numero ? "active" : ""}>Número</label>
-                                        </div></>
+                                            <button className="btn waves-effect waves-light red lighten-2" type="button" onClick={() => this.removerTelefone(index)}>Remover</button>
+                                        <button className="btn waves-effect waves-light green lighten-2" type="button" onClick={this.adicionarTelefone}>Adicionar Telefone</button>
+                                        </div>
+                                        </> 
                                 ))}
                             </div>
+                            
                             <div className="row">
                                 <div className="col s12">
                                     <button className="btn waves-effect purple ligthen-2" type="submit" name="action">Enviar
                                         <i className="material-icons right">send</i>
                                     </button>
                                 </div>
+                                
                                 <a onClick={(e) => this.props.seletorView('FormularioCadastroCliente', e)} className="waves-effect purple ligthen-3 btn-small">Voltar</a>
                             </div>
                         </form>
