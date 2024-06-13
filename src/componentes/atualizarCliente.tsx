@@ -192,8 +192,9 @@ export default class AtualizarCliente extends Component<Props, State> {
                                     <div key={index} className="input-field col s12">
                                             <input onChange={(e) => this.capturarTelefone(e, index)} value={telefone.numero} id={`numero-${index}`} type="text" className="validate" />
                                             <label htmlFor={`numero-${index}`} className={telefone.numero ? "active" : ""}>Número</label>
-                                            <button className="btn waves-effect waves-light red lighten-2" type="button" onClick={() => this.removerTelefone(index)}>Remover</button>
-                                        <button className="btn waves-effect waves-light green lighten-2" type="button" onClick={this.adicionarTelefone}>Adicionar Telefone</button>
+                                        <button className="btn waves-effect waves-light green lighten-2" type="button" onClick={this.adicionarTelefone}>Adicionar Telefone</button> <br></br> <br></br>
+                                        <button className="btn waves-effect waves-light red lighten-2" type="button" onClick={() => this.removerTelefone(index)}>Remover</button>
+
                                         </div>
                                         </> 
                                 ))}
@@ -203,10 +204,11 @@ export default class AtualizarCliente extends Component<Props, State> {
                                 <div className="col s12">
                                     <button className="btn waves-effect purple ligthen-2" type="submit" name="action">Enviar
                                         <i className="material-icons right">send</i>
-                                    </button>
+                                    </button> <br></br>
+                                    <br></br>
+                                    <a onClick={(e) => this.props.seletorView('FormularioCadastroCliente', e)} className="waves-effect purple ligthen-3 btn-small">Voltar</a>
+
                                 </div>
-                                
-                                <a onClick={(e) => this.props.seletorView('FormularioCadastroCliente', e)} className="waves-effect purple ligthen-3 btn-small">Voltar</a>
                             </div>
                         </form>
                     </div>

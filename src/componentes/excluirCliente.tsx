@@ -85,9 +85,10 @@ export default class ExcluirCliente extends Component<Props, State> {
                                 <div className="col s12">
                                     <button className="btn waves-effect purple ligthen-2" type="submit" name="action">Enviar
                                         <i className="material-icons right">send</i>
-                                    </button>
-                                </div>
-                                <a onClick={(e) => this.props.seletorView('FormularioCadastroCliente', e)} className="waves-effect purple ligthen-3 btn-small">Voltar</a>
+                                    </button> <br></br> <br></br>
+                                    <a onClick={(e) => this.props.seletorView('FormularioCadastroCliente', e)} className="waves-effect purple ligthen-3 btn-small">Voltar</a>
+
+                                </div> 
                             </div>
                         </form>
                     </div>

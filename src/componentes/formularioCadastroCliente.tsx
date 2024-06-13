@@ -236,7 +236,7 @@ export default class FormularioCadastroCliente extends Component<Props, State> {
                                         <i className="material-icons right">send</i>
                                     </button>
                                 </div>
-                                <a onClick={(e) => this.props.seletorView('ExcluirCliente', e)} className="purple-text text-lighten-2">Excluir</a> <br></br>
+                                <a onClick={(e) => this.props.seletorView('ExcluirCliente', e)} className="purple-text text-lighten-2">Excluir</a> <br></br> 
                                 <a onClick={(e) => this.props.seletorView('AtualizarCliente', e)} className="purple-text text-lighten-2">Atualizar</a>
                             </div>
                             
