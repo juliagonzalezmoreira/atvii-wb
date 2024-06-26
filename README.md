@@ -12,8 +12,8 @@ Atividade ATVII-WB da aula de POO
 ## ⚠️ Branches:
 
 `main`: ATVII <br>
-`atviii` : ATVIII <br>
-`ativ` : ATIV 
+`atviii-wb` : ATVIII <br>
+`atviv` : ATIV 
 
 ## 📍 Instruções 
 
